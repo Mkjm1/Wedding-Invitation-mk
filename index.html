@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>دعوة زفاف مهدي كريم وضحى معد</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --coral: #c9573d;
+      --coral-deep: #9d3a2c;
+      --ink: #103e43;
+      --cream: #fff6e8;
+      --sand: #f2dfc4;
+      --gold: #f4d7aa;
+      --line: rgba(16, 62, 67, .16);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Amiri", serif;
+      color: var(--ink);
+      overflow-x: hidden;
+      background: var(--cream);
+    }
+    .page-shell {
+      width: 100%;
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-shell::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .35;
+      background-image:
+        radial-gradient(circle at 15% 15%, rgba(201, 87, 61, .12) 0 2px, transparent 2.5px),
+        radial-gradient(circle at 85% 70%, rgba(16, 62, 67, .1) 0 1px, transparent 1.5px);
+      background-size: 36px 36px, 52px 52px;
+      z-index: 0;
+    }
+    header, main, footer { position: relative; z-index: 1; }
+    .top-nav {
+      backdrop-filter: blur(14px);
+      background: rgba(255, 246, 232, .9);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-link {
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+      text-decoration: none;
+      font-size: .92rem;
+      transition: color .2s ease;
+    }
+    .nav-link:hover { color: var(--coral); }
+    .hero {
+      min-height: 88vh;
+      display: grid;
+      align-items: stretch;
+      isolation: isolate;
+      position: relative;
+    }
+    .hero-image-wrap {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      overflow: hidden;
+    }
+    .hero-image-wrap::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(11, 55, 58, .93) 0%, rgba(11, 55, 58, .67) 45%, rgba(201, 87, 61, .25) 100%),
+        linear-gradient(0deg, rgba(11, 55, 58, .83) 0%, transparent 58%);
+    }
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: sepia(.18) saturate(1.1) contrast(1.04);
+      transform: scale(1.025);
+    }
+    .hero-content {
+      width: 100%;
+      max-width: 1150px;
+      margin: auto;
+      padding: 7.25rem 1.5rem 4.25rem;
+      color: var(--cream);
+    }
+    .hero-panel {
+      max-width: 700px;
+      border-right: 2px solid var(--gold);
+      padding: 1.25rem 1.75rem 1.25rem 0;
+      animation: rise .9s ease both;
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .floral-mark {
+      color: var(--gold);
+      font-size: 1.65rem;
+      letter-spacing: .5rem;
+    }
+    .hero-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .7rem 1.25rem;
+      margin-top: 1.75rem;
+      font-family: "DM Sans", sans-serif;
+      font-size: .92rem;
+    }
+    .hero-details span {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+    }
+    .action-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .55rem;
+      min-height: 46px;
+      padding: .7rem 1.15rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
+      font-family: inherit;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .action-button:hover { transform: translateY(-2px); }
+    .section-wrap {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5.5rem 1.5rem;
+    }
+    .section-kicker {
+      color: var(--coral);
+      letter-spacing: .1em;
+      font-family: "DM Sans", sans-serif;
+      font-size: .78rem;
+      font-weight: 700;
+    }
+    .section-heading {
+      color: var(--ink);
+      line-height: 1.15;
+      margin-top: .45rem;
+    }
+    .countdown-card {
+      margin-top: 2rem;
+      padding: 1.2rem;
+      border: 1px solid rgba(201, 87, 61, .28);
+      background: rgba(255, 253, 248, .85);
+      box-shadow: 0 17px 45px rgba(16, 62, 67, .09);
+    }
+    .countdown-grid {
+      direction: ltr;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: .75rem;
+    }
+    .countdown-unit {
+      text-align: center;
+      padding: 1rem .5rem;
+      background: var(--ink);
+      color: var(--cream);
+    }
+    .countdown-number {
+      display: block;
+      font-family: "DM Sans", sans-serif;
+      font-size: clamp(1.65rem, 5vw, 3rem);
+      line-height: 1;
+      font-weight: 700;
+    }
+    .countdown-label {
+      display: block;
+      direction: rtl;
+      margin-top: .45rem;
+      color: var(--gold);
+      font-size: .86rem;
+    }
+    .detail-card {
+      border-top: 3px solid var(--coral);
+      padding: 1.5rem;
+      background: #fffaf1;
+      box-shadow: 0 12px 30px rgba(16, 62, 67, .07);
+    }
+    .detail-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #f6dfc0;
+      color: var(--coral-deep);
+      margin-bottom: 1rem;
+    }
+    .rsvp-panel {
+      position: relative;
+      overflow: hidden;
+      background: var(--ink);
+      color: var(--cream);
+    }
+    .rsvp-panel::after {
+      content: "♥";
+      position: absolute;
+      left: -1rem;
+      bottom: -3rem;
+      color: rgba(244, 215, 170, .12);
+      font-size: 14rem;
+      line-height: 1;
+    }
+    .form-field {
+      width: 100%;
+      min-height: 48px;
+      padding: .7rem .85rem;
+      font-family: inherit;
+      border: 1px solid rgba(244, 215, 170, .55);
+      color: var(--cream);
+      background: rgba(255, 246, 232, .08);
+      border-radius: 0;
+    }
+    .form-field::placeholder { color: rgba(255, 246, 232, .66); }
+    .attendance-choice {
+      display: flex;
+      align-items: center;
+      gap: .55rem;
+      padding: .7rem .85rem;
+      border: 1px solid rgba(244, 215, 170, .42);
+      cursor: pointer;
+      transition: background .2s ease;
+    }
+    .attendance-choice:has(input:checked) { background: rgba(244, 215, 170, .16); }
+    .attendance-choice input { accent-color: #e07854; }
+    .status-message {
+      display: none;
+      margin-top: 1rem;
+      padding: .8rem 1rem;
+      border: 1px solid var(--gold);
+      color: var(--cream);
+      background: rgba(244, 215, 170, .13);
+    }
+    .status-message.is-visible { display: block; }
+    #entry-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: var(--ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
+    }
+    #entry-overlay.hidden-overlay {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .music-float {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 50;
+      background: var(--coral);
+      color: var(--cream);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      border: 2px solid var(--gold);
+      animation: spin 4s linear infinite;
+      animation-play-state: paused;
+    }
+    .music-float.playing {
+      animation-play-state: running;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    
+    .couple-names {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+    .couple-names .name {
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      font-weight: 700;
+      color: var(--cream);
+    }
+    .couple-names .heart-divider {
+      color: var(--gold);
+      font-size: 2rem;
+      animation: heartBeat 1.5s ease-in-out infinite;
+    }
+    @keyframes heartBeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+    
+    @media (max-width: 640px) {
+      .hero-content { padding-top: 6.1rem; }
+      .hero-panel { padding-right: 1rem; }
+      .countdown-grid { gap: .45rem; }
+      .section-wrap { padding: 4rem 1.15rem; }
+    }
+  </style>
+</head>
+<body>
+  <div id="entry-overlay">
+    <div class="text-center p-8 max-w-md mx-4">
+      <div class="text-[#f4d7aa] text-4xl mb-4">✦ ❋ ✦</div>
+      <h2 class="text-[#fff6e8] text-3xl font-bold mb-4">بسم الله الرحمن الرحيم</h2>
+      <p class="text-[#fff6e8] text-xl mb-8 leading-relaxed">يسعدنا حضوركم ومشاركتنا أفراحنا<br>اضغط للدخول إلى الدعوة</p>
+      <button id="enter-btn" class="action-button bg-[#c9573d] text-[#fff6e8] px-8 py-3 rounded-full text-lg font-bold shadow-lg hover:bg-[#9d3a2c] transition-colors">
+        دخول
+      </button>
+    </div>
+  </div>
+
+  <audio id="bg-music" loop>
+    <source src="https://serv100.albumaty.com/songs_2020/Albumaty.Com_alysa_mn_awl_dkykt_-_ma_sad_lmgrd.mp3" type="audio/mpeg">
+  </audio>
+
+  <div id="music-float-btn" class="music-float" title="تشغيل/إيقاف الموسيقى">
+    <i data-lucide="music" width="24" height="24"></i>
+  </div>
+
+  <div class="page-shell">
+    <header class="top-nav fixed top-0 z-50 w-full">
+      <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4" aria-label="التنقل الرئيسي">
+        <a href="#home" class="text-xl font-bold no-underline" style="color: var(--ink);">دعوة زفاف</a>
+        <div class="flex items-center gap-6">
+          <a href="#details" class="nav-link">التفاصيل</a>
+          <a href="#rsvp" class="nav-link">تأكيد الحضور</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero" aria-labelledby="hero-title">
+        <div class="hero-image-wrap">
+          <img loading="lazy" class="hero-image" src="https://images.pexels.com/photos/30159419/pexels-photo-30159419.jpeg" alt="خلفية زفاف أنيقة">
+        </div>
+        <div class="hero-content">
+          <div class="hero-panel">
+            <div class="floral-mark" aria-hidden="true">✦ ❋ ✦</div>
+            <p class="mt-5 text-base tracking-[0.18em]" style="color: var(--gold); font-weight: 700;">بسم الله الرحمن الرحيم</p>
+            <h1 id="hero-title" class="mt-3 font-bold" style="color: var(--cream); font-size: 32px;">دعوة زفاف</h1>
+            
+            <div class="couple-names">
+              <span class="name">مهدي كريم</span>
+              <span class="heart-divider">♥</span>
+              <span class="name">ضحى معد</span>
+            </div>
+            
+            <p class="mt-5 max-w-xl text-xl leading-relaxed" style="color: var(--cream);">بكل الحب والفرح، يسعدنا دعوتكم لمشاركتنا أجمل لحظات العمر.</p>
+            <div class="hero-details">
+              <span><i data-lucide="calendar-days" width="16" height="16"></i><span>27 نوفمبر 2026</span></span>
+              <span><i data-lucide="clock-3" width="16" height="16"></i><span>03:00 م</span></span>
+              <span><i data-lucide="map-pin" width="16" height="16"></i><span>قاعة مزايا للأعراس</span></span>
+            </div>
+            <button id="scroll-to-rsvp-btn" class="action-button mt-8 bg-[#fff6e8] text-[#103e43] font-bold" type="button">
+              تأكيد الحضور
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="countdown" class="section-wrap text-center" aria-labelledby="countdown-title">
+        <p class="section-kicker">نقترب من الموعد</p>
+        <h2 id="countdown-title" class="section-heading text-4xl font-bold sm:text-5xl">العدّ التنازلي للفرح</h2>
+        <div class="countdown-card">
+          <div id="countdown-grid" class="countdown-grid" aria-label="العد التنازلي لموعد الحفل">
+            <div class="countdown-unit"><span id="days" class="countdown-number">00</span><span class="countdown-label">يوماً</span></div>
+            <div class="countdown-unit"><span id="hours" class="countdown-number">00</span><span class="countdown-label">ساعة</span></div>
+            <div class="countdown-unit"><span id="minutes" class="countdown-number">00</span><span class="countdown-label">دقيقة</span></div>
+            <div class="countdown-unit"><span id="seconds" class="countdown-number">00</span><span class="countdown-label">ثانية</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="details" class="bg-[#f2dfc4]/45" aria-labelledby="details-title">
+        <div class="section-wrap">
+          <div class="max-w-2xl">
+            <p class="section-kicker">تفاصيل الحفل</p>
+            <h2 id="details-title" class="section-heading text-4xl font-bold sm:text-5xl">بانتظاركم في يومنا الكبير</h2>
+          </div>
+          <div class="mt-10 grid gap-5 md:grid-cols-3">
+            <article class="detail-card">
+              <div class="detail-icon"><i data-lucide="calendar-heart" width="21" height="21"></i></div>
+              <h3 class="text-2xl font-bold">التاريخ</h3>
+              <p class="mt-3 text-lg leading-relaxed">الجمعة، 27 نوفمبر 2026</p>
+            </article>
+            <article class="detail-card">
+              <div class="detail-icon"><i data-lucide="clock-3" width="21" height="21"></i></div>
+              <h3 class="text-2xl font-bold">الوقت</h3>
+              <p class="mt-3 text-lg leading-relaxed">الثالثة عصراً</p>
+            </article>
+            <article class="detail-card">
+              <div class="detail-icon"><i data-lucide="map-pinned" width="21" height="21"></i></div>
+              <h3 class="text-2xl font-bold">المكان</h3>
+              <p class="mt-3 text-lg leading-relaxed">قاعة مزايا للأعراس</p>
+              <a href="https://maps.app.goo.gl/gzSRv7rveai7ufLp9?g_st=ac" target="_blank" rel="noopener noreferrer" class="action-button mt-5 bg-[#103e43] text-[#fff6e8]">
+                فتح الموقع على الخريطة
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="rsvp" class="section-wrap" aria-labelledby="rsvp-title">
+        <div class="rsvp-panel mx-auto max-w-3xl p-6 sm:p-10">
+          <div class="relative z-10">
+            <p class="text-sm font-bold tracking-[0.16em] text-[#f4d7aa]">نرجو منكم التأكيد</p>
+            <h2 id="rsvp-title" class="mt-2 text-4xl font-bold sm:text-5xl">هل ستشاركونا الفرحة؟</h2>
+            <p class="mt-4 max-w-xl text-lg leading-relaxed text-[#fff6e8]">يرجى تعبئة النموذج التالي لمساعدتنا في ترتيب هذه المناسبة الجميلة.</p>
+            
+            <form id="rsvp-form" action="https://formsubmit.co/mkjm774@gmail.com" method="POST" class="mt-8 grid gap-5">
+              <input type="hidden" name="_subject" value="تأكيد حضور جديد: دعوة مهدي وضحا">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_next" value="">
+              
+              <div>
+                <label for="guest-name" class="mb-2 block text-lg text-[#fff6e8]">الاسم الكريم</label>
+                <input id="guest-name" name="الاسم" type="text" required class="form-field" autocomplete="name" placeholder="اكتب اسمك الثلاثي">
+              </div>
+              <div>
+                <label for="guests-count" class="mb-2 block text-lg text-[#fff6e8]">عدد المرافقين</label>
+                <input id="guests-count" name="عدد_المرافقين" type="number" min="0" max="20" required value="0" class="form-field" inputmode="numeric">
+              </div>
+              <fieldset>
+                <legend class="mb-3 text-lg text-[#fff6e8]">هل ستتمكن من الحضور؟</legend>
+                <div class="grid gap-3 sm:grid-cols-2">
+                  <label class="attendance-choice">
+                    <input type="radio" name="حالة_الحضور" value="نعم، سنحضر" required>
+                    <span class="text-[#fff6e8]">نعم، بكل سرور</span>
+                  </label>
+                  <label class="attendance-choice">
+                    <input type="radio" name="حالة_الحضور" value="نعتذر، لا نستطيع الحضور" required>
+                    <span class="text-[#fff6e8]">نعتذر، لا نتمكن من الحضور</span>
+                  </label>
+                </div>
+              </fieldset>
+              <div class="flex flex-wrap gap-3">
+                <button id="submit-rsvp" type="submit" class="action-button bg-[#c9573d] text-lg text-[#fff6e8] font-bold">إرسال تأكيد الحضور</button>
+              </div>
+              <p id="form-error" class="status-message" role="alert">تعذر إرسال التأكيد حالياً. يرجى مراجعة البيانات والمحاولة مرة أخرى.</p>
+              <p id="form-success" class="status-message" role="status">شكراً لكم، تم استلام تأكيد حضوركم بنجاح.</p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-[#103e43]/15 px-5 py-8 text-center">
+      <p class="text-lg" style="color: var(--ink); font-weight: 700;">وجودكم يكتمل به الفرح ♥</p>
+    </footer>
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    const entryOverlay = document.getElementById('entry-overlay');
+    const enterBtn = document.getElementById('enter-btn');
+    const bgMusic = document.getElementById('bg-music');
+    const musicFloatBtn = document.getElementById('music-float-btn');
+    let isMusicPlaying = false;
+
+    function scrollToRSVP() {
+      const rsvpSection = document.getElementById('rsvp');
+      if (rsvpSection) {
+        rsvpSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    const scrollBtn = document.getElementById('scroll-to-rsvp-btn');
+    if (scrollBtn) {
+      scrollBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        scrollToRSVP();
+      });
+    }
+
+    enterBtn.addEventListener('click', () => {
+      entryOverlay.classList.add('hidden-overlay');
+      bgMusic.volume = 0.5;
+      bgMusic.play().then(() => {
+        isMusicPlaying = true;
+        musicFloatBtn.classList.add('playing');
+      }).catch(e => {
+        console.log("تعذر تشغيل الموسيقى تلقائياً:", e);
+      });
+    });
+
+    musicFloatBtn.addEventListener('click', () => {
+      if (isMusicPlaying) {
+        bgMusic.pause();
+        musicFloatBtn.classList.remove('playing');
+      } else {
+        bgMusic.play();
+        musicFloatBtn.classList.add('playing');
+      }
+      isMusicPlaying = !isMusicPlaying;
+    });
+
+    const weddingDate = new Date("2026-11-27T15:00:00+03:00");
+
+    function updateCountdown() {
+      const difference = weddingDate.getTime() - Date.now();
+      const grid = document.getElementById("countdown-grid");
+
+      if (difference <= 0) {
+        grid.innerHTML = "<p class='text-2xl font-bold text-[#c9573d] col-span-4'>حلّ موعد فرحتنا، شكراً لمشاركتكم!</p>";
+        return;
+      }
+
+      const values = {
+        days: Math.floor(difference / 86400000),
+        hours: Math.floor((difference % 86400000) / 3600000),
+        minutes: Math.floor((difference % 3600000) / 60000),
+        seconds: Math.floor((difference % 60000) / 1000)
+      };
+
+      Object.entries(values).forEach(([key, value]) => {
+        document.getElementById(key).textContent = String(value).padStart(2, "0");
+      });
+    }
+    
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+    
+    const rsvpForm = document.getElementById("rsvp-form");
+    const STORAGE_KEY = 'rsvp_submitted_mahdi_duha_wedding';
+
+    const nextInput = rsvpForm.querySelector('input[name="_next"]');
+    if (nextInput) {
+      nextInput.value = window.location.href;
+    }
+
+    if (localStorage.getItem(STORAGE_KEY)) {
+      rsvpForm.innerHTML = `
+        <div class="text-center py-8">
+          <i data-lucide="check-circle" width="64" height="64" class="mx-auto mb-4" style="color: var(--gold);"></i>
+          <h3 class="text-2xl font-bold mb-3" style="color: var(--cream);">شكراً لتأكيد حضوركم!</h3>
+          <p class="text-lg" style="color: var(--cream);">تم استلام ردكم مسبقاً، ونتطلع لرؤيتكم في يومنا المميز.</p>
+        </div>
+      `;
+      lucide.createIcons();
+    } else {
+      rsvpForm.addEventListener("submit", function(event) {
+        const submitButton = document.getElementById("submit-rsvp");
+        submitButton.disabled = true;
+        submitButton.textContent = "جاري الإرسال...";
+      });
+
+      window.addEventListener('load', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('sent') || urlParams.has('_captcha')) {
+          localStorage.setItem(STORAGE_KEY, 'true');
+          rsvpForm.innerHTML = `
+            <div class="text-center py-8">
+              <i data-lucide="check-circle" width="64" height="64" class="mx-auto mb-4" style="color: var(--gold);"></i>
+              <h3 class="text-2xl font-bold mb-3" style="color: var(--cream);">شكراً لتأكيد حضوركم!</h3>
+              <p class="text-lg" style="color: var(--cream);">تم استلام ردكم بنجاح، ونتطلع لرؤيتكم في يومنا المميز.</p>
+            </div>
+          `;
+          lucide.createIcons();
+        }
+      });
+    }
+  </script>
+</body>
+</html>
